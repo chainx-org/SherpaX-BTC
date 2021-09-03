@@ -33,6 +33,13 @@ For details, please check [the document of ComingChat](https://github.com/coming
 ## Mechanism of Trusted Custodian Based on Game Theory
 Using tokens (ksm, kar) available on the existing network as the base currency collateral, combined with reasonable and useful game theory, the collateral token competition is certified as a BTC threshold signature custodian, and the custodian can profit from KSX.
 
+We mark the probability of a custodian doing evil as P, then the probability of more than m(m/n=1/3) doing evil in n nodes is:
+![avatar](https://github.com/chainx-org/SherpaX-BTC/blob/main/%E9%97%A8%E9%99%90%E6%89%98%E7%AE%A1%E7%BB%84%E5%90%88%E6%A6%82%E7%8E%87.png)
+When P=0.1, the combined probability curve obtained with the increase of the number of nodes is as follows:
+![avatar](https://github.com/chainx-org/SherpaX-BTC/blob/main/%E6%A6%82%E7%8E%87%E5%B1%95%E7%A4%BA%E5%9B%BE.jpg)
+It can be seen from the figure that when P=0.1, the probability of n custodians “doing evil” decreases rapidly with the increase of n, and approaches zero when n>20. 　
+In other words: 　In the custody of a single game round, the collateral equivalent to 1BTC can be mortgaged, and it can cross-chain 1BTC at most. Now when n> 20, we pledge 1 BTC equivalent collateral, and we can cross-chain greater than 10,000 BTC, which can solve the problem that the market value of BTC is much larger than that of the cross-chain guarantee chain. The premise is to ensure that the probability of a single custodian doing evil is less than or equal to 0.1
+
 ## Example
 A, B, and C are campaigning as custodians, and a certain amount (ksx, kar, ksm, usdt) must be mortgaged as collateral. As a custodian, KSX can be used as a return of income.
 A, B, and C will generate two escrow addresses at the same time, one of which is the BTC network and the other is the SherpaX network.
